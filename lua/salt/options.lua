@@ -36,3 +36,8 @@ vim.opt.inccommand = "split"
 
 -- Allows terminal to use full colors
 vim.opt.termguicolors = true
+
+-- Diagnostics
+vim.diagnostic.config({
+	virtual_lines = false,
+})

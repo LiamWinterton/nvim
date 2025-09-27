@@ -55,31 +55,6 @@ return {
 				"lemminx",
 			})
 
-			-- Adjust settings accordingly
-			vim.lsp.config("lua_ls", {
-				settings = {
-					-- Enable vim global for vim config directories
-					Lua = {
-						diagnostics = {
-							globals = { "vim" },
-						},
-						workspace = {
-							library = vim.api.nvim_get_runtime_file("", true),
-							checkThirdParty = false,
-						},
-					},
-				},
-			})
-
-			vim.lsp.config("eslint", {
-				on_attach = function(_, bufnr)
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						buffer = bufnr,
-						command = "EslintFixAll",
-					})
-				end,
-			})
-
 			-- Use LspAttach autocommand to only map the following keys
 			-- after the language server attaches to the current buffer
 			vim.api.nvim_create_autocmd("LspAttach", {
