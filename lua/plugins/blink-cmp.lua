@@ -11,7 +11,7 @@ return {
 		},
 		completion = { documentation = { auto_show = true } },
 		sources = {
-			default = { "lazydev", "lsp", "path", "snippets" },
+			default = { "lsp", "lazydev", "snippets" },
 			providers = {
 				lazydev = {
 					name = "LazyDev",
