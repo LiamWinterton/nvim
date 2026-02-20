@@ -24,10 +24,20 @@ return {
 			{
 				"neovim/nvim-lspconfig",
 				config = function()
-					-- Register filetypes
+					-- Enable ZSH for bash completion
+					vim.lsp.config("bashls", {
+						filetypes = { "bash", "sh", "zsh" },
+						settings = {
+							bashIde = {
+								globPattern = "*@(.sh|.inc|.bash|.command|.zsh|.zshrc|zshrc)",
+							},
+						},
+					})
+
 					vim.filetype.add({
-						extension = {
-							mdc = "markdown",
+						filename = {
+							[".zshrc"] = "zsh",
+							[".zshenv"] = "zsh",
 						},
 					})
 
