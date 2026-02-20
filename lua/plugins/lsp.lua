@@ -9,6 +9,7 @@ return {
 				"html",
 				"jsonls",
 				"stylua",
+				"lua_ls",
 				"marksman",
 				"mdx_analyzer",
 				"rust_analyzer",
